@@ -32,25 +32,31 @@ This activity reinforces:
 // ❌ Original Code (Before Refactoring)
 // ============================================
 
-// Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
+// Function to greet a list of names
+function greetNames(names) {
+   let greetings = [];
+   for (let i = 0; i < names.length; i++) {
+       greetings.push(`Welcome, ${names[i]}!`);
+   }
+   return greetings;
+}
 
-// Script 2 - Sum calculation
-let num1 = 5, num2 = 10;
-let sum = num1 + num2;
-console.log("The sum of 5 and 10 is " + sum);
+// Function to calculate the sum of two numbers
+function calculateSum(num1, num2) {
+   return num1 + num2;
+}
 
-// Script 3 - Product calculation
-let product = num1 * num2;
-console.log("The product of 5 and 10 is " + product);
+// Function to calculate the product of two numbers
+function calculateProduct(num1, num2) {
+   return num1 * num2;
+}
 
-// Script 4 - Print names from a list
-let names = ["Alice", "Bob", "Charlie"];
-console.log("Names in the list:");
-for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
+// Function to print names from a list
+function printList(items) {
+   console.log("Names in the list:");
+   for (let i = 0; i < items.length; i++) {
+       console.log(items[i]);
+   }
 }
 
 /*
@@ -72,3 +78,21 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+
+
+// Task 1: Greet Names
+const names = ["Alice", "Bob", "Charlie"];
+const greetings = greetNames(names);
+greetings.forEach(greeting => console.log(greeting));
+
+// Task 2: Sum Calculation
+const num1 = 5, num2 = 10;
+const sum = calculateSum(num1, num2);
+console.log(`The sum of ${num1} and ${num2} is ${sum}`);
+
+// Task 3: Product Calculation
+const product = calculateProduct(num1, num2);
+console.log(`The product of ${num1} and ${num2} is ${product}`);
+
+// Task 4: Print Names
+printList(names);
